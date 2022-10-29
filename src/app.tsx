@@ -12,7 +12,9 @@ function kanaToHira(str) {
 
 async function parse(text: string) {
   if (!Mecab) {
-    Mecab = (await import("https://unpkg.com/mecab-wasm@1.0.3/lib/mecab.js")).default;
+    // @ts-ignore
+    Mecab = (await import("https://unpkg.com/mecab-wasm@1.0.3/lib/mecab.js"))
+      .default;
     console.log("mecab loaded as:", Mecab);
   }
 
